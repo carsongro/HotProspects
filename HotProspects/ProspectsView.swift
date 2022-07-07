@@ -16,18 +16,26 @@ struct ProspectsView: View {
     
     @EnvironmentObject var prospects: Prospects
     @State private var isShowingScanner = false
+    @State private var sortedByName = true
     
     let filter: FilterType
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(filteredProspects) { prospect in
-                    VStack(alignment: .leading) {
-                        Text(prospect.name)
-                            .font(.headline)
-                        Text(prospect.emailAddress)
-                            .foregroundColor(.secondary)
+                ForEach(sortedByName ? filteredProspects.sorted() : filteredProspects) { prospect in
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text(prospect.name)
+                                .font(.headline)
+                            Text(prospect.emailAddress)
+                                .foregroundColor(.secondary)
+                        }
+                        
+                        Spacer()
+                        
+                        Label("", systemImage: prospect.isContacted ? "person.crop.circle.fill.badge.checkmark" : "person.crop.circle.badge.xmark" )
+                            .foregroundColor(prospect.isContacted ? .blue : .red)
                     }
                     .swipeActions {
                         if prospect.isContacted {
@@ -57,10 +65,19 @@ struct ProspectsView: View {
             }
             .navigationTitle(title)
             .toolbar {
-                Button {
-                    isShowingScanner = true
-                } label: {
-                    Label("Scan", systemImage: "qrcode.viewfinder")
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        sortedByName.toggle()
+                    } label: {
+                        Text(sortedByName ? "Sorted By: Name" : "Sorted By: Recent")
+                    }
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        isShowingScanner = true
+                    } label: {
+                        Label("Scan", systemImage: "qrcode.viewfinder")
+                    }
                 }
             }
             .sheet(isPresented: $isShowingScanner) {
@@ -118,8 +135,9 @@ struct ProspectsView: View {
             
             var dateComponents = DateComponents()
             dateComponents.hour = 9
-//            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+//            test notifications
+//            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
             
             let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
             

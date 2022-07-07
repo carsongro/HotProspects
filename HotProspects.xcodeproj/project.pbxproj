@@ -11,6 +11,7 @@
 		B500991C286F483100906063 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B500991B286F483100906063 /* ContentView.swift */; };
 		B500991E286F483200906063 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B500991D286F483200906063 /* Assets.xcassets */; };
 		B5009921286F483200906063 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5009920286F483200906063 /* Preview Assets.xcassets */; };
+		B51709CE287726A200BA4F50 /* FileManager-DocumentDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51709CD287726A200BA4F50 /* FileManager-DocumentDirectory.swift */; };
 		B552B67F28733F42004D002F /* ProspectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552B67E28733F42004D002F /* ProspectsView.swift */; };
 		B552B68128733F48004D002F /* MeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552B68028733F48004D002F /* MeView.swift */; };
 		B552B68328734116004D002F /* Prospect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552B68228734116004D002F /* Prospect.swift */; };
@@ -24,6 +25,7 @@
 		B500991B286F483100906063 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B500991D286F483200906063 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5009920286F483200906063 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B51709CD287726A200BA4F50 /* FileManager-DocumentDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager-DocumentDirectory.swift"; sourceTree = "<group>"; };
 		B552B67E28733F42004D002F /* ProspectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProspectsView.swift; sourceTree = "<group>"; };
 		B552B68028733F48004D002F /* MeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeView.swift; sourceTree = "<group>"; };
 		B552B68228734116004D002F /* Prospect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prospect.swift; sourceTree = "<group>"; };
@@ -63,10 +65,11 @@
 			children = (
 				B5009919286F483100906063 /* HotProspectsApp.swift */,
 				B500991B286F483100906063 /* ContentView.swift */,
-				B552B68228734116004D002F /* Prospect.swift */,
 				B552B67E28733F42004D002F /* ProspectsView.swift */,
 				B552B68028733F48004D002F /* MeView.swift */,
+				B552B68228734116004D002F /* Prospect.swift */,
 				B59D0737287652EC0016CAF3 /* ImageSaver.swift */,
+				B51709CD287726A200BA4F50 /* FileManager-DocumentDirectory.swift */,
 				B500991D286F483200906063 /* Assets.xcassets */,
 				B500991F286F483200906063 /* Preview Content */,
 			);
@@ -162,6 +165,7 @@
 				B552B68328734116004D002F /* Prospect.swift in Sources */,
 				B552B67F28733F42004D002F /* ProspectsView.swift in Sources */,
 				B500991C286F483100906063 /* ContentView.swift in Sources */,
+				B51709CE287726A200BA4F50 /* FileManager-DocumentDirectory.swift in Sources */,
 				B500991A286F483100906063 /* HotProspectsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
